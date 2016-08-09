@@ -1,11 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
 import re
 import sys
 import codecs
 
 from setuptools import setup, find_packages
 
+
+if sys.argv[-1] == 'wheel':
+    os.system('pip wheel --wheel-dir=wheelhouse .')
+    sys.exit()
 
 PYPI_RST_FILTERS = (
     # Replace code-blocks
