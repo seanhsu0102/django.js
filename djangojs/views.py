@@ -12,7 +12,7 @@ from django.http import HttpResponse
 from django.utils.cache import patch_vary_headers
 from django.views.decorators.cache import cache_page
 from django.views.generic import View, TemplateView
-from django.views.i18n import javascript_catalog
+from django.views.i18n import JavaScriptCatalog
 
 from djangojs.conf import settings
 from djangojs.urls_serializer import urls_as_dict, urls_as_json
@@ -155,4 +155,4 @@ class QUnitView(JsTestView):
 
 @cache_page(60 * settings.JS_CACHE_DURATION)
 def cached_javascript_catalog(request, domain='djangojs', packages=None):
-    return javascript_catalog(request, domain, packages)
+    return JavaScriptCatalog.as_view(domain=domain, packages=packages)(request)
