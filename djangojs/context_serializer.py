@@ -107,7 +107,7 @@ class ContextSerializer(object):
         }
         if 'django.contrib.sessions.middleware.SessionMiddleware' in settings.MIDDLEWARE:
             user = self.request.user
-            data['user']['is_authenticated'] = user.is_authenticated()
+            data['user']['is_authenticated'] = user.is_authenticated
             data['user']['id'] = user.id
             if hasattr(user, 'username'):
                 data['user']['username'] = user.username
