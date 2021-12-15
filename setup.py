@@ -48,12 +48,12 @@ if sys.version_info[0:2] < (2, 7):
     install_requires += ['argparse']
 
 setup(
-    name='streetvoice-django.js',
+    name='django.js-ng',
     version=__import__('djangojs').__version__,
     description=__import__('djangojs').__description__,
     long_description=long_description,
     url='https://github.com/Robert-Chiang/django.js',
-    download_url='http://pypi.python.org/pypi/streetvoice-django.js',
+    download_url='http://pypi.python.org/pypi/django.js-ng',
     author='Robert Chiang',
     author_email='robert@streetvoice.com',
     packages=find_packages(),

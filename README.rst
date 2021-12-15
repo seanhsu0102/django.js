@@ -23,7 +23,7 @@ This is currently a work in progress (API wil not be stable before 1.0) so don't
 Compatibility
 =============
 
-Django.js requires Python 2.7+ and Django 2+.
+Django.js requires Python 2.7 / Python 3.x and Django 2+.
 
 
 Installation
@@ -33,13 +33,13 @@ You can install Django.js with pip:
 
 .. code-block:: console
 
-    $ pip install streetvoice-django.js
+    $ pip install django.js-ng
 
 or with easy_install:
 
 .. code-block:: console
 
-    $ easy_install streetvoice-django.js
+    $ easy_install django.js-ng
 
 
 Add ``djangojs`` to your ``settings.INSTALLED_APPS``.
