@@ -87,7 +87,7 @@ def _get_urls_for_pattern(pattern, prefix='', namespace=None):
             if namespace:
                 pattern_name = ':'.join((namespace, pattern_name))
             full_url = prefix + pattern.pattern.regex.pattern
-            for char in ['^', '$']:
+            for char in ['^', '$', '\Z']:
                 full_url = full_url.replace(char, '')
             # remove optionnal non capturing groups
             opt_grp_matches = RE_OPT_GRP.findall(full_url)
