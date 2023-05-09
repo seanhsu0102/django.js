@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.utils import six
+import six
+
 from djangojs.context_serializer import ContextSerializer
 
 
