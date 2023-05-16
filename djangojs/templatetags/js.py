@@ -4,9 +4,10 @@ Provide template tags to help with Javascript/Django integration.
 '''
 from __future__ import unicode_literals
 
+import six
+
 from django import template
 from django.contrib.staticfiles.storage import staticfiles_storage
-from django.utils import six
 from django.utils.safestring import mark_safe
 
 from djangojs import JQUERY_MIGRATE_VERSION

@@ -3,10 +3,11 @@ from __future__ import unicode_literals
 
 import json
 import logging
+import six
 
 from django.conf import settings
 from django.template.context import RequestContext
-from django.utils import translation, six
+from django.utils import translation
 
 from djangojs.conf import settings
 from djangojs.utils import LazyJsonEncoder
