@@ -171,7 +171,7 @@
          * Get the CSRF token from the cookie.
          */
         csrf_token: function() {
-            return this._getCookie('csrftoken');
+            return this._getCookie('csrf-token');
         },
 
         /**
