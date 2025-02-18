@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import json
+import six
 
 from django import VERSION as DJANGO_VERSION
 from django.conf import global_settings
@@ -14,7 +15,6 @@ from django.middleware.locale import LocaleMiddleware
 from django.test import TestCase
 from django.test.client import RequestFactory
 from django.test.utils import override_settings
-from django.utils import six
 from django.utils import translation
 from django.utils import unittest
 
