@@ -201,6 +201,17 @@ Cache management
 Django.js urls and context cache duration in minutes.
 
 
+CSRF handling
+~~~~~~~~~~~~~
+
+``CSRF_COOKIE_NAME``
+--------------------
+
+**Default**: ``csrftoken``
+
+Specify the name of the CSRF cookie. If not specified, defaults to ``csrftoken``.
+
+
 Usage exemple
 -------------
 

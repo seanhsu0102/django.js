@@ -171,7 +171,7 @@
          * Get the CSRF token from the cookie.
          */
         csrf_token: function() {
-            return this._getCookie('csrf-token');
+            return this._getCookie(window.DJANGO_JS_CSRF_COOKIE_NAME || 'csrftoken');
         },
 
         /**
@@ -211,7 +211,7 @@
                 }
 
                 if (!safeMethod(settings.type) && sameOrigin(settings.url)) {
-                    xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                    xhr.setRequestHeader("X-CSRFToken", getCookie(window.DJANGO_JS_CSRF_COOKIE_NAME || 'csrftoken'));
                 }
             });
         },

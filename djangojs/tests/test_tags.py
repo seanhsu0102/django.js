@@ -359,3 +359,37 @@ class DjangoJsTagTest(TestCase):
         self.assertIn('window.DJANGO_JS_CSRF', rendered)
         self.assertIn('<script type="text/javascript" src="%s">' % reverse('django_js_init'), rendered)
         self.assertNotIn('<script type="text/javascript" src="%s">' % reverse('js_catalog'), rendered)
+
+    @override_settings(CSRF_COOKIE_NAME='customcsrftoken')
+    def test_custom_csrf_cookie_name(self):
+        '''Should use custom CSRF cookie name'''
+        template = Template('''
+            {% load js %}
+            <script>
+                var csrfToken = Django.csrf_token();
+                var csrfElement = Django.csrf_element();
+                Django.jquery_csrf();
+            </script>
+            ''')
+        rendered = template.render(Context())
+        self.assertIn('var csrfToken = Django.csrf_token();', rendered)
+        self.assertIn('var csrfElement = Django.csrf_element();', rendered)
+        self.assertIn('Django.jquery_csrf();', rendered)
+        self.assertIn('window.DJANGO_JS_CSRF_COOKIE_NAME = "customcsrftoken";', rendered)
+
+    @override_settings(CSRF_COOKIE_NAME='customcsrftoken')
+    def test_csrf_cookie_name_setting(self):
+        '''Should use CSRF_COOKIE_NAME setting'''
+        template = Template('''
+            {% load js %}
+            <script>
+                var csrfToken = Django.csrf_token();
+                var csrfElement = Django.csrf_element();
+                Django.jquery_csrf();
+            </script>
+            ''')
+        rendered = template.render(Context())
+        self.assertIn('var csrfToken = Django.csrf_token();', rendered)
+        self.assertIn('var csrfElement = Django.csrf_element();', rendered)
+        self.assertIn('Django.jquery_csrf();', rendered)
+        self.assertIn('window.DJANGO_JS_CSRF_COOKIE_NAME = "customcsrftoken";', rendered)
