@@ -211,7 +211,7 @@
                 }
 
                 if (!safeMethod(settings.type) && sameOrigin(settings.url)) {
-                    xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                    xhr.setRequestHeader("X-CSRFToken", getCookie('csrf-token'));
                 }
             });
         },
