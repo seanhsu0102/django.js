@@ -29,7 +29,7 @@ DEFAULTS = {
     'JS_I18N_PATTERNS': tuple(),
     'JS_CACHE_DURATION': 24 * 60,
     'JQUERY_VERSION': JQUERY_DEFAULT_VERSION,
-    'CSRF_COOKIE_NAME': 'csrftoken',
+    'CSRF_COOKIE_NAME': 'csrf-token',
 }
 
 
