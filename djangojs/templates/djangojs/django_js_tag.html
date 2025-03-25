@@ -1,7 +1,7 @@
 {% load js %}
 {% include "djangojs/django_js_init.html" %}
 {% if js.minified %}
-{% js "js/djangojs/django.min.js" %}
+{% js "js/djangojs/django.min.js?v=20250325" %}
 {% else %}
-{% js "js/djangojs/django.js" %}
+{% js "js/djangojs/django.js?v=20250325" %}
 {% endif %}
